@@ -1,0 +1,9 @@
+CompileFlags:
+  Add:
+    - "-xc"
+    - "-std=c11"
+    - "-I./"
+    - "-I."
+    - "-I../"
+    - "-I./include/"
+  CompilationDatabase: build/dev
