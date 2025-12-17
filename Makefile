@@ -1,6 +1,6 @@
 SRC_DIR := src
 BIN_DIR := bin
-TARGET := $(BIN_DIR)/theartoffun
+TARGET := $(BIN_DIR)/main
 
 SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES := $(patsubst $(SRC_DIR)/%.c,$(BIN_DIR)/%.o,$(SRC_FILES))
