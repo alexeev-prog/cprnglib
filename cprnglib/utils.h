@@ -1,6 +1,6 @@
 #ifndef UTILS_H
 
-#include <stdint.h>
+#    include <stdint.h>
 
 static inline uint64_t rotl64(uint64_t x, int8_t r) {
     return (x << r) | (x >> (64 - r));
@@ -15,4 +15,4 @@ static inline uint64_t fmix64(uint64_t k) {
     return k;
 }
 
-#endif // !UTILS_H
+#endif    // !UTILS_H

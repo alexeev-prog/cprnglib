@@ -1,7 +1,7 @@
 #ifndef MURMUR3_H
-#include <stdint.h>
+#    include <stdint.h>
 
-#include "utils.h"
+#    include "utils.h"
 
 typedef struct {
     uint64_t seed;
@@ -34,5 +34,4 @@ uint64_t murmur3_prng_next(murmur3_prng_t* prng) {
     return h1;
 }
 
-
-#endif // !MURMUR3_H
+#endif    // !MURMUR3_H
