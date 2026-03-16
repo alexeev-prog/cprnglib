@@ -7,7 +7,7 @@ OBJ_FILES := $(patsubst $(SRC_DIR)/%.c,$(BIN_DIR)/%.o,$(SRC_FILES))
 
 CC := gcc
 CFLAGS := -Wall -Wextra -O2
-LDFLAGS := -lm -lrt
+LDFLAGS := -lm -lrt -I./cprnglib
 
 .PHONY: all clean
 

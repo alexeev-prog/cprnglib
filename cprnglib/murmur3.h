@@ -1,19 +1,21 @@
 #ifndef MURMUR3_H
-#    include <stdint.h>
+#define MURMUR3_H
 
-#    include "utils.h"
+#include <stdint.h>
+
+#include "utils.h"
 
 typedef struct {
     uint64_t seed;
     uint64_t counter;
 } murmur3_prng_t;
 
-void murmur3_prng_init(murmur3_prng_t* prng, uint64_t seed) {
+static inline void murmur3_prng_init(murmur3_prng_t* prng, uint64_t seed) {
     prng->seed = seed;
     prng->counter = 0;
 }
 
-uint64_t murmur3_prng_next(murmur3_prng_t* prng) {
+static inline uint64_t murmur3_prng_next(murmur3_prng_t* prng) {
     uint64_t h1 = prng->seed;
     uint64_t k1 = prng->counter++;
 

@@ -1,6 +1,7 @@
-#include "stdint.h"
+#ifndef JSF_32_H
+#define JSF_32_H
 
-uint32_t jsf32_state[4] = {0x12345678, 0x9ABCDEF0, 0x13579BDF, 0x2468ACE0};
+#include <stdint.h>
 
 typedef struct {
     uint32_t a, b, c, d;
@@ -8,7 +9,7 @@ typedef struct {
 
 static jsf32_state_t jsf32_global = {0x12345678, 0x9ABCDEF0, 0x13579BDF, 0x2468ACE0};
 
-uint32_t jsf32() {
+static inline uint32_t jsf32(void) {
     jsf32_state_t* s = &jsf32_global;
     uint32_t e = s->a - ((s->b << 27) | (s->b >> 5));
     s->a = s->b ^ ((s->c << 17) | (s->c >> 15));
@@ -17,3 +18,5 @@ uint32_t jsf32() {
     s->d = e + s->a;
     return s->d;
 }
+
+#endif    // !JSF_32_H
